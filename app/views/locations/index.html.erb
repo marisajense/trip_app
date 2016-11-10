@@ -1,0 +1,16 @@
+<h1>All Locations For: <%= @trip.title %> </h1>
+
+<% if @locations.any? %>
+  <% @locations.each do |location| %>
+    <div>
+      <%= link_to location.name, trip_location_path(@trip, location) %>
+    </div>
+    <% end %>
+<% else %>
+  <h5>No Locations Found, Please Create One</h5>
+<% end %>
+<br />
+<%= link_to 'New Location', new_trip_location_path(@trip) %>
+<br />
+
+<%= link_to 'Trip Page', trip_path(@trip) %>

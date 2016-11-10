@@ -1,0 +1,16 @@
+<h1>All Addresses For: <%= @location.name %> </h1>
+
+<% if @addresses.any? %>
+  <% @addresses.each do |address| %>
+    <div>
+      <%= link_to address.city, trip_location_address_path(@trip, location, address) %>
+    </div>
+    <% end %>
+<% else %>
+  <h5>No Address Found, Please Create One</h5>
+<% end %>
+<br />
+<%= link_to 'New Address', new_trip_location_address_path(@location) %>
+<br />
+
+<%= link_to 'Location Page', trip_location_path(@location) %>

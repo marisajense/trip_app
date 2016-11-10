@@ -1,0 +1,19 @@
+<%= form_for [@trip, @location] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true %>
+  <br />
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <br />
+
+  <%= f.label :comments %>
+  <%= f.text_area :comments %>
+  <br />
+
+  <%= f.label :reccomend %>
+  <%= f.select :reccomend, ['Yes', 'No'] %>
+  <br />
+
+  <%= f.submit %>
+<% end %>
